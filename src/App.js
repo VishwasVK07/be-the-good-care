@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import VolunteerScreen from './screens/VolunteerScreen';
+import FeedScreen from './screens/FeedScreen';
+import StrengthsScreen from './screens/StrengthsScreen';
 
 function App() {
+  const [screen, setScreen] = useState('volunteer');
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      {screen === 'volunteer' && <VolunteerScreen />}
+      {screen === 'feed' && <FeedScreen />}
+      {screen === 'strengths' && <StrengthsScreen />}
+
+      <nav className="nav-bar">
+        <button onClick={() => setScreen('volunteer')} className={screen === 'volunteer' ? 'active' : ''}>Log</button>
+        <button onClick={() => setScreen('feed')} className={screen === 'feed' ? 'active' : ''}>Feed</button>
+        <button onClick={() => setScreen('strengths')} className={screen === 'strengths' ? 'active' : ''}>Strengths</button>
+      </nav>
     </div>
   );
 }
