@@ -33,3 +33,4 @@ function StrengthsScreen() {
 }
 
 export default StrengthsScreen;
+
