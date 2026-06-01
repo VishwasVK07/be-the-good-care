@@ -6,15 +6,15 @@ function EncouragementScreen() {
   const openWhenItems = [
     {
       title: 'Today was hard',
-      message: 'Hard days are not wasted days. Every moment you stayed present, held a hand, or spoke gently — it mattered more than you know. You are allowed to feel tired. Rest, and come back. We need you.'
+      message: 'Hard days are not wasted days. Every moment you stayed present, held a hand, or spoke gently, it mattered more than you know. You are allowed to feel tired. Rest and come back. We need you.'
     },
     {
       title: 'You feel unseen',
-      message: 'The things you do quietly — the extra check-in, the careful explanation, the patient hand — those are seen. They are remembered. Here are people who wanted you to know that.'
+      message: 'The things you do quietly, the extra check-in, the careful explanation, the overall positive impact on patient\'s morale — those are seen. They are remembered. Here are people who wanted you to know that.'
     },
     {
       title: 'You need encouragement',
-      message: 'You chose one of the hardest professions because you care. That choice matters every single day, even when it doesn\'t feel like it. You are making a difference.'
+      message: 'You chose one of the hardest professions because you care. That choice matters every single day, even when it doesn\'t feel like it. You are making a difference, keep going.'
     },
     {
       title: 'You need a smile',

@@ -17,7 +17,23 @@ function VolunteerScreen() {
       setSelectedTags([...selectedTags, tag]);
     }
   };
-
+  const submitRecognition = async (staffName, department, note) => {
+  try {
+    await fetch('http://127.0.0.1:5000/recognitions', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        staff_name: staffName,
+        department: department,
+        tags: selectedTags,
+        note: note
+      })
+    });
+    setSubmitted(true);
+  } catch (error) {
+    console.error('Error:', error);
+  }
+};
   if (submitted) {
     return (
       <div className="screen">
@@ -72,7 +88,11 @@ function VolunteerScreen() {
         <input type="text" placeholder="e.g. She took extra time to explain everything..." />
       </div>
 
-      <button className="submit-btn" onClick={() => setSubmitted(true)}>
+      <button className="submit-btn" onClick={() => submitRecognition(
+  document.querySelector('input').value,
+  document.querySelector('select').value,
+  document.querySelectorAll('input')[1].value
+)}>
         Send recognition
       </button>
     </div>
